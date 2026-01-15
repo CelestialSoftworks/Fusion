@@ -31,6 +31,6 @@ This project is licensed under the Attribution-NonCommercial-NoDerivatives 4.0 I
 
 Join our **community server** for support, suggestions, or partnerships:
 
-<a href="https://discord.gg/VWCa9ETM">
+<a href="https://discord.gg/4qxWxW8w6h">
     <img src="Assets/discord.png" width=32 height=32>
 </a>
