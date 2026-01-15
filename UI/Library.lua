@@ -121,33 +121,21 @@ function e:DragFunc(g, h)
 	end)
 end
 
-local w = game:GetObjects("rbxassetid://115427779398440")[1]
-w.Name = f
-w.Main.Visible = false
-w.DisplayOrder = 100
-
-if not isfile(Assets .. "0001.png") then
-    local Success, Content = pcall(game.HttpGet, game, "https://raw.githubusercontent.com/SentinelSoftworks/ROE/refs/heads/main/UI/Assets/ad.mp4")
-    if Success and Content then writefile(Assets .. "0001.png", Content) end
-end
-
-w.Main.Advertisement.Image.Image = getcustomasset(Assets .. "0001.png")
-
-if gethui then
-	w.Parent = gethui()
-else
-	w.Parent = CoreGui
-end
+local currentUIInstance = nil
 
 function e:ToggleUI()
-	w.Main.Visible = not w.Main.Visible
+	if currentUIInstance and currentUIInstance.Main then
+		currentUIInstance.Main.Visible = not currentUIInstance.Main.Visible
+	end
 end
 
 function e:Notify(x, y)
+	if not currentUIInstance then return end
+	
 	task.spawn(function()
 		local z = y.Duration or b
-		local A = w.Notifications[x]:Clone()
-		A.Parent = w.Notifications
+		local A = currentUIInstance.Notifications[x]:Clone()
+		A.Parent = currentUIInstance.Notifications
 		A.Name = y.Title or "Unknown Title"
 		A.Visible = true
 		A.Actions.ButtonTemplate.Visible = false
@@ -180,10 +168,35 @@ function e:Notify(x, y)
 end
 
 function e:CreateLibrary(G, H)
+	if currentUIInstance then
+		currentUIInstance:Destroy()
+		currentUIInstance = nil
+	end
+	
 	local I = {
 		Name = typeof(G) == "table" and G.Name or (typeof(G) == "string" and G or "Undefined"),
 		Icon = typeof(G) == "table" and G.Icon or H or "rbxassetid://11432865001"
 	}
+	
+	local w = game:GetObjects("rbxassetid://115427779398440")[1]
+	w.Name = f
+	w.Main.Visible = false
+	w.DisplayOrder = 100
+
+	if not isfile(Assets .. "0001.png") then
+		local Success, Content = pcall(game.HttpGet, game, "https://raw.githubusercontent.com/SentinelSoftworks/ROE/refs/heads/main/UI/Assets/ad.mp4")
+		if Success and Content then writefile(Assets .. "0001.png", Content) end
+	end
+
+	w.Main.Advertisement.Image.Image = getcustomasset(Assets .. "0001.png")
+
+	if gethui then
+		w.Parent = gethui()
+	else
+		w.Parent = CoreGui
+	end
+	
+	currentUIInstance = w
 	
 	w.Main.Visible = true
 	local J = w.Main.SideBar
@@ -223,11 +236,13 @@ function e:CreateLibrary(G, H)
 	local M = {}
 	
 	function M:Notify(y, N, O, P)
+		if not currentUIInstance then return end
+		
 		task.spawn(function()
-			w.Main.Notifications.Visible = true
+			currentUIInstance.Main.Notifications.Visible = true
 			local z = typeof(y) == "table" and y.Duration or O or b
-			local A = w.Main.Notifications.Template:Clone()
-			A.Parent = w.Main.Notifications
+			local A = currentUIInstance.Main.Notifications.Template:Clone()
+			A.Parent = currentUIInstance.Main.Notifications
 			A.Duration.Text = z
 			A.Visible = true
 			
@@ -264,7 +279,7 @@ function e:CreateLibrary(G, H)
 			end
 			
 			A:Destroy()
-			w.Main.Notifications.Visible = false
+			currentUIInstance.Main.Notifications.Visible = false
 		end)
 	end
 	
@@ -272,6 +287,8 @@ function e:CreateLibrary(G, H)
 	local FirstTab = nil
 	
 	function M:SwitchTab(tabName)
+		if not currentUIInstance then return end
+		
 		if tabName then
 			for B, tab in next, L:GetChildren() do
 				if tab.Name == tabName and tab:IsA("Frame") then
@@ -292,7 +309,7 @@ function e:CreateLibrary(G, H)
 	end
 	
 	function M:CreateTab(S, H)
-		if not S then return end
+		if not S or not currentUIInstance then return end
 		
 		local T = K.Template:Clone()
 		T.ImageLabel.Image = typeof(S) == "table" and S.Icon or H or "rbxassetid://11432859220"
