@@ -127,29 +127,6 @@ local w = game:GetObjects("rbxassetid://115427779398440")[1]
 w.Name = f
 w.Main.Visible = false
 w.DisplayOrder = 100
-local adImage = w.Main.Advertisement:WaitForChild("Image")
-    for i = 1, 79 do
-        local path = string.format("ad-frames/frame-%d.png", i)
-        if not isfile(Assets .. path) then
-            local url = string.format("https://raw.githubusercontent.com/SentinelSoftworks/ROE/refs/heads/main/UI/Assets/ad-frames/frame-%d.png", i)
-            local s, c = pcall(game.HttpGet, game, url)
-            if s and c then writefile(Assets .. path, c) end
-        end
-    
-    local frames = {}
-    for i = 1, 79 do
-        frames[i] = getcustomasset(Assets .. string.format("ad-frames/frame-%d.png", i))
-    end
-    adImage.Image = frames[1]
-    local start = tick()
-    game:GetService("RunService").RenderStepped:Connect(function()
-        if not adImage.Parent then return end
-        
-        local elapsed = tick() - start
-        local frame = math.floor(elapsed / 0.05) % 79 + 1
-        adImage.Image = frames[frame]
-    end)
-end
 
 if gethui then
 	w.Parent = gethui()
@@ -1186,6 +1163,7 @@ function e:CreateLibrary(G, H)
 end
 
 return e
+
 
 
 
