@@ -1,4 +1,4 @@
-# ROE <img src="Assets/roe.png" width="32" height="32"> 
+# ROE <img src="Assets/roe.png" width="64" height="64"> 
 
 Welcome to the **official GitHub repository of ROE**.  
 ROE is a premium Roblox script hub delivering optimized, undetected, and high-quality scripts.
