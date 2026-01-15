@@ -1,18 +1,3 @@
-local GetService = game.GetService
-local UserInputService = GetService(game, "UserInputService")
-local TweenService = GetService(game, "TweenService")
-local HttpService = GetService(game, "HttpService")
-local RunService = GetService(game, "RunService")
-local Players = GetService(game, "Players")
-local CoreGui = cloneref(GetService(game, "CoreGui"))
-local Player = Players.LocalPlayer
-local Mouse = Player:GetMouse()
-
-local IsMobile = table.find({
-	Enum.Platform.IOS,
-	Enum.Platform.Android,
-}, UserInputService:GetPlatform())
-
 local a = "Alpha 0.1"
 local b = 5
 local c = "AuraIS"
@@ -26,6 +11,20 @@ local Configuration = {
 	Inputs = {},
 	Keybinds = {},
 }
+
+local GetService = game.GetService
+local UserInputService = GetService(game, "UserInputService")
+local TweenService = GetService(game, "TweenService")
+local HttpService = GetService(game, "HttpService")
+local RunService = GetService(game, "RunService")
+local Players = GetService(game, "Players")
+local CoreGui = cloneref(GetService(game, "CoreGui"))
+local Player = Players.LocalPlayer
+local Mouse = Player:GetMouse()
+local IsMobile = table.find({
+	Enum.Platform.IOS,
+	Enum.Platform.Android,
+}, UserInputService:GetPlatform())
 
 if not isfolder(c) then
 	makefolder(c)
@@ -127,6 +126,14 @@ local w = game:GetObjects("rbxassetid://115427779398440")[1]
 w.Name = f
 w.Main.Visible = false
 w.DisplayOrder = 100
+
+if not isfile(Assets .. "0001.png") then
+    local Success, Content = pcall(game.HttpGet, game, "https://raw.githubusercontent.com/SentinelSoftworks/ROE/refs/heads/main/UI/Assets/ad.mp4")
+    if Success and Content then writefile(Assets .. "0001.png", Content) end
+end
+
+w.Main.Advertisement.Image.Image = getcustomasset(Assets .. "0001.png")
+
 
 if gethui then
 	w.Parent = gethui()
@@ -1163,6 +1170,7 @@ function e:CreateLibrary(G, H)
 end
 
 return e
+
 
 
 
