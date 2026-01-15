@@ -8,7 +8,6 @@ local Configuration = {
 	Toggles = {},
 	Dropdowns = {},
 	Sliders = {},
-	Inputs = {},
 	Keybinds = {},
 }
 
@@ -134,15 +133,10 @@ end
 
 w.Main.Advertisement.Image.Image = getcustomasset(Assets .. "0001.png")
 
-
 if gethui then
 	w.Parent = gethui()
 else
 	w.Parent = CoreGui
-end
-
-function e:GetUIInstance()
-	return w
 end
 
 function e:ToggleUI()
@@ -1051,13 +1045,7 @@ function e:CreateLibrary(G, H)
 			
 			function _:CreateTextbox(b8)
 				local aQ = L.Template.Input:Clone()
-				local Flag = b8.Flag
-				local CurrentValue = Flag and Configuration.Inputs[Flag] or ""
-				
-				if Flag and not Configuration.Inputs[Flag] then
-					Configuration.Inputs[Flag] = CurrentValue
-					SaveConfiguration()
-				end
+				local CurrentValue = ""
 				
 				aQ.Name = b8.Name
 				aQ.Title.Text = b8.Name
@@ -1076,11 +1064,6 @@ function e:CreateLibrary(G, H)
 						aQ.InputFrame.InputBox.Text = ""
 					end
 					
-					if Flag then
-						Configuration.Inputs[Flag] = text
-						SaveConfiguration()
-					end
-					
 					local E, F = pcall(function()
 						b8.Callback(text)
 					end)
@@ -1097,10 +1080,6 @@ function e:CreateLibrary(G, H)
 				local b8Obj = {}
 				function b8Obj:Set(b9)
 					aQ.InputFrame.InputBox.Text = b9
-					if Flag then
-						Configuration.Inputs[Flag] = b9
-						SaveConfiguration()
-					end
 				end
 				return b8Obj
 			end
@@ -1170,27 +1149,3 @@ function e:CreateLibrary(G, H)
 end
 
 return e
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
