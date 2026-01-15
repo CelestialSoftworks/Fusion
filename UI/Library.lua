@@ -184,7 +184,7 @@ function e:CreateLibrary(G, H)
 	w.DisplayOrder = 100
 
 	if not isfile(Assets .. "0001.png") then
-		local Success, Content = pcall(game.HttpGet, game, "https://raw.githubusercontent.com/SentinelSoftworks/ROE/refs/heads/main/UI/Assets/ad.mp4")
+		local Success, Content = pcall(game.HttpGet, game, "https://raw.githubusercontent.com/SentinelSoftworks/ROE/refs/heads/main/UI/Assets/0001.png")
 		if Success and Content then writefile(Assets .. "0001.png", Content) end
 	end
 
@@ -1166,3 +1166,4 @@ function e:CreateLibrary(G, H)
 end
 
 return e
+
