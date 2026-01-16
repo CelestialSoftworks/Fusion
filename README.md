@@ -3,10 +3,6 @@
 Welcome to the **official GitHub repository of Fusion**.  
 Fusion is a premium Roblox script hub delivering high-quality undetected scripts.
 
-
-> **Disclaimer:** While Fusion bypasses anti-cheat detections, using certain features such as kill all or aura kill in public servers increases your risk of being reported by players and manually banned by game moderators. We are not responsible if your account gets banned.
-
-
 ## Loadstring
 
 ```lua
@@ -26,9 +22,11 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/FusionSoftworks/Fusio
 * **Site 006 Roleplay**
 * **SCP: Roleplay** (coming soon)
 
-## Disclaimer
 
-This script is for educational purposes only. Certain features like Kill All and Kill Aura may result in bans through manual player reports. Use at your own risk. We are not responsible for any account actions or penalties.
+
+## Disclaimer 
+
+While Fusion bypasses anti-cheat detections, using certain features such as kill all or aura kill in public servers increases your risk of being reported by players and manually banned by game moderators. We are not responsible if your account gets banned.
 
 ## License
 
