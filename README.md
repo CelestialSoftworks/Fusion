@@ -1,17 +1,21 @@
-# ROE <img src="Assets/roe.png" width="32" height="32"> 
+# Fusion <img src="Assets/fusion.png" width="32" height="32">
 
-Welcome to the **official GitHub repository of ROE**.  
-ROE is a premium Roblox script hub delivering optimized, undetected, and high-quality scripts.
+Welcome to the **official GitHub repository of Fusion**.  
+Fusion is a premium Roblox script hub delivering high-quality undetected scripts.
+
+
+> **Disclaimer:** While Fusion bypasses anti-cheat detections, using certain features such as kill all or aura kill in public servers increases your risk of being reported by players and manually banned by game moderators. We are not responsible if your account gets banned.
+
 
 ## Loadstring
 
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/SentinelSoftworks/ROE/refs/heads/main/Loader.lua"))()
-````
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FusionSoftworks/Fusion/refs/heads/main/Loader.lua"))()
+```
 
 ## Features
 
-* **Undetectable:** **Undetectable by anticheats within supported games**.
+* **Undetectable:** **Bypasses anticheats detections.**.
 * **Multi-platform:** Optimized for both **PC and mobile**.
 * **User-friendly:** Modern UI with **easy-to-use interface and navigation**
 * **Regular updates:** Updated frequently with **new features, fixes, and improvements**.
@@ -21,6 +25,10 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/SentinelSoftworks/ROE
 
 * **Site 006 Roleplay**
 * **SCP: Roleplay** (coming soon)
+
+## Disclaimer
+
+This script is for educational purposes only. Certain features like Kill All and Kill Aura may result in bans through manual player reports. Use at your own risk. We are not responsible for any account actions or penalties.
 
 ## License
 
