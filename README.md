@@ -11,17 +11,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/FusionSoftworks/Fusio
 
 ## Features
 
-* **Undetectable:** **Bypasses anticheats detections**.
-* **Multi-platform:** Optimized for both **PC and mobile**.
-* **User-friendly:** Modern UI with **easy-to-use interface and navigation**
-* **Regular updates:** Updated frequently with **new features, fixes, and improvements**.
-* **Community support:** Join our Discord community for **support, feedback, and suggestions**.
+* **Undetectable:** Bypasses anticheats detections.
+* **Multi-platform:** Optimized for both PC and mobile.
+* **User-friendly:** Modern UI with easy-to-use interface and navigation
+* **Regular updates:** Updated frequently with new features, fixes, and improvements.
+* **Community support:** Join our Discord community for support, feedback, and suggestions.
 > **Disclaimer:** While Fusion bypasses anti-cheat detections, using certain features such as kill all or aura kill in public servers increases your risk of being reported by players and manually banned by game moderators. We are not responsible if your account gets banned.
 
 ## Supported Games
 
-* **Site 006 Roleplay**
-* **SCP: Roleplay** (coming soon)
+* Site 006 Roleplay
+* SCP: Roleplay (coming soon)
 
 ## License
 
