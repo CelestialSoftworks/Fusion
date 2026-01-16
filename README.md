@@ -11,7 +11,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/FusionSoftworks/Fusio
 
 ## Features
 
-* **Undetectable:** **Bypasses anticheats detections.**.
+* **Undetectable:** **Bypasses anticheats detections**.
 * **Multi-platform:** Optimized for both **PC and mobile**.
 * **User-friendly:** Modern UI with **easy-to-use interface and navigation**
 * **Regular updates:** Updated frequently with **new features, fixes, and improvements**.
